@@ -69,6 +69,13 @@
         });
         return pages;
       }
+      // pages1() {
+      //   const pages = [];
+      //   for (let i = 0; i < Math.ceil(this.iconList.length / 8); i++) {
+      //     pages.push(this.iconList.slice(i * 8, Math.min(this.iconList.length, (i + 1) * 8)));
+      //   }
+      //   return pages;
+      // }
     }
   };
 </script>
@@ -81,6 +88,7 @@
     padding-bottom: 50%;
   }
   .icon{
+    margin-top: 0.6rem;
     overflow: hidden;
     position: relative;
     float: left;
