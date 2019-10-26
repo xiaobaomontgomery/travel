@@ -7,11 +7,12 @@
       <em class="fa fa-search" style="align-items: center"></em>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      {{this.city}}
-      <em class="fa fa-caret-down" style="align-items: center"></em>
-    </div>
-
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+        <em class="fa fa-caret-down" style="align-items: center"></em>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -29,7 +30,7 @@
   @import "~@/assets/styles/variable.styl";
   .header {
     display: flex;
-    line-height: 3rem;
+    line-height: $headerHeight;
     background: $bgColor;
     color: #fff;
   }
@@ -59,6 +60,7 @@
     width: 4rem;
     float: right;
     text-align: center;
+    color: #fff;
 
   }
 </style>

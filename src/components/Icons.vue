@@ -1,7 +1,7 @@
 <template>
     <div class="icons">
-      <swiper>
-        <swiper-slide :options="swiperOption" v-for="(page, index) of pages" :key="index">
+      <swiper :options="swiperOption">
+        <swiper-slide  v-for="(page, index) of pages" :key="index">
           <div class="icon" v-for="item of page" :key="item.id">
             <div class="icon-img" >
               <img class="icon-img-content" :src="item.imgUrl" alt="">
@@ -58,7 +58,7 @@
     padding-bottom: 50%;
   }
   .icon{
-    margin-top: 0.6rem;
+    margin-top: 0.1rem;
     overflow: hidden;
     position: relative;
     float: left;
