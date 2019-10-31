@@ -52,6 +52,7 @@
           this.list = [];
           return;
         }
+        // 判断输入的城市名或拼音与所给数据是否匹配，匹配则展示相关城市列表，否则显示'没有数据匹配'
         this.timer = setTimeout(() => {
           const result = [];
           for (let i in this.cities) {
