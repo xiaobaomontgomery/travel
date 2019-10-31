@@ -51,7 +51,7 @@
         if (this.touchStatus) {
           if (this.timer) {
             clearTimeout(this.timer);
-          } ;
+          }
           this.timer = setTimeout(() => {
             const touchY = e.touches[0].clientY - 79;
             const index = Math.floor((touchY - this.startY) / 20);
