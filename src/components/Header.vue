@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{this.city}}
+        {{this.$store.state.city}}
         <em class="fa fa-caret-down" style="align-items: center"></em>
       </div>
     </router-link>
@@ -20,7 +20,6 @@
   export default {
     name: 'HomeHeader',
     props: {
-      city: String
     }
   };
 </script>
