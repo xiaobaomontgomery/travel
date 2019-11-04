@@ -16,6 +16,7 @@
   import HomeRecommend from '@/components/Recommend';
   import HomeWeekend from '@/components/Weekend';
   import axios from 'axios';
+  import { mapState } from 'vuex';
   export default {
     name: 'home',
     components: {
@@ -27,15 +28,19 @@
     },
     data() {
       return {
+        lastCity: ' ', // 通过lastCity缓存上一次城市选择
         swiperList: [],
         iconList: [],
         recommendList: [],
         weekendList: []
       };
     },
+    computed: {
+      ...mapState(['city'])
+    },
     methods: {
       getHomeInfo() {
-        axios.get('/mock/index.json')
+        axios.get('/mock/index.json?city=' + this.city)
           .then(this.getHomeInfoSucc);
       },
       getHomeInfoSucc(res) {
@@ -50,7 +55,15 @@
       }
     },
     mounted() {
+      this.lastCity = this.city;
       this.getHomeInfo();
+    },
+    // 首页城市和上一次一样时页面不需要重新渲染，首页城市变化时页面对应的内容则需要重新加载
+    activated() {
+      if (this.lastCity !== this.city) {
+        this.lastCity = this.city;
+        this.getHomeInfo();
+      }
     }
   };
 </script>
