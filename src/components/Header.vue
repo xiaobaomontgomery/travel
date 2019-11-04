@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{this.city}}
+        {{this.doubleCity}}
         <em class="fa fa-caret-down" style="align-items: center"></em>
       </div>
     </router-link>
@@ -17,11 +17,12 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex';
+  import { mapState, mapGetters } from 'vuex';
   export default {
     name: 'HomeHeader',
     computed: {
-      ...mapState(['city'])
+      ...mapState(['city']),
+      ...mapGetters(['doubleCity'])
     }
   };
 </script>
