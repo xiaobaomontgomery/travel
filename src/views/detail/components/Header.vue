@@ -46,11 +46,11 @@
         }
       }
     },
-    activated() {
+    mounted() {
       window.addEventListener('scroll', this.handleScroll);
     },
     // 解除滚动对其他页面对影响
-    deactivated() {
+    unmounted() {
       window.removeEventListener('scroll', this.handleScroll);
     }
   };
